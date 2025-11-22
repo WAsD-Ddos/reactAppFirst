@@ -1,0 +1,21 @@
+// @use правила должны быть первыми!
+// Переменные (должны быть первыми, так как используются в других файлах)
+@use 'variables';
+
+// Сброс стилей
+@use 'nullstyles/nullstyle';
+
+// Утилиты
+@use 'utils';
+
+// Глобальные стили
+@use 'components/globals';
+
+// Компоненты
+@use 'components/button';
+@use 'components/field';
+@use 'components/todo';
+@use 'components/todo-item';
+
+// Импорт шрифтов (после всех @use правил)
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
