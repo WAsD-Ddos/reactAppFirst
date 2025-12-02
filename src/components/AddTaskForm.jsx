@@ -6,17 +6,16 @@ import { TasksContext } from '../context/TasksContext';
 
 const AddTaskForm = () => {
   const {
-    AddTask,
+    addTask,
     newTaskTitle,
     setNewTaskTitle,
-    newTaskInputRef
-
+    newTaskInputRef,
   } = useContext(TasksContext)
 
   let InputTimer;
   function onSubmit(event) {
     event.preventDefault()
-    AddTask()
+    addTask()
   }
   return (
     <form className="todo__form" onSubmit={onSubmit}>
