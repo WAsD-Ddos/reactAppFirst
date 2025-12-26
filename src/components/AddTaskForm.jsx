@@ -1,10 +1,11 @@
 import Field from './field';
 import Button from './Button';
 
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { TasksContext } from '../context/TasksContext';
 
 const AddTaskForm = () => {
+  const [error , SetError] = useState('');
   const {
     addTask,
     newTaskTitle,
@@ -27,10 +28,12 @@ const AddTaskForm = () => {
         onInput={(event)=>{
           setNewTaskTitle(event.target.value) 
         }}
+        error = {error}
         ref = {newTaskInputRef}
       />
       <Button
         type='submit'
+        isDisabled = {newTaskTitle.trim().length === 0}
       >Add</Button>
     </form>
   )
